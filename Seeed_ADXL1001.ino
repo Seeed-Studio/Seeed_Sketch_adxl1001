@@ -73,7 +73,10 @@ void calibration(void)
 	
 	for(int i=0;i<CALI_BUF_LEN;i++)
 	{
-		cali_buf[i] = analogRead(INPUT_PIN);;
+		cali_buf[i] = analogRead(INPUT_PIN);
+
+		cali_buf[i] = cali_buf[i] * 3 / 2; 
+		
 		delay(CALI_INTERVAL_TIME);
 	}
 	cali_data =  deal_cali_buf(cali_buf);
@@ -90,6 +93,7 @@ void AccMeasurement(void)
 {
 	int16_t val = 0;
 	val = analogRead(INPUT_PIN);
+	val = val * 3 / 2; 
 	
 	SERIAL.print("Raw data   = ");
 	SERIAL.println(val);
@@ -118,7 +122,7 @@ void setup()
 
 void loop()
 {
-	int val = analogRead(A0);
+	//int val = analogRead(A0);
 	//SERIAL.print("val = ");
 	//SERIAL.println(val);
 	//delay(500);
