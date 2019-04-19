@@ -75,6 +75,8 @@ void calibration(void)
 	{
 		cali_buf[i] = analogRead(INPUT_PIN);
 
+		/*Notice that there is a 2/3 Voltage dividing circuit of hardware design,
+		So the actual sensitivity of adxl1001 is 20 * 2/3 ≈ 14 mv/g*/
 		cali_buf[i] = cali_buf[i] * 3 / 2; 
 		
 		delay(CALI_INTERVAL_TIME);

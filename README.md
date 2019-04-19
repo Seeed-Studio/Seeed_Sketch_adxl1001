@@ -3,12 +3,13 @@
 ## Grove Accelerometer sensor
 
 ### parameter:
-type ： analog device
-scale ：±100g range
-sensitivity ：20mv/g
+type ： analog device  
 
+scale ：±100g range  
 
----------------------------------------
+sensitivity ：20mv/g  
+**Notice that there is a 2/3 Voltage dividing circuit of hardware design,So the actual sensitivity of adxl1001 is 20 * 2/3 ≈ 14 mv/g**
+
 
 
 ***
